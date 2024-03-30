@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import ProgressBar from "@ramonak/react-progress-bar";
 import "./styles.css";
 
 function VideoUploadForm() {
@@ -138,13 +137,6 @@ function VideoUploadForm() {
           </div>
         </form>
         <div className="py-4 my-1">
-          {/* <ProgressBar
-            completed={progrossbar}
-            className="wrapper"
-            barContainerClassName="container"
-            completedClassName="barCompleted"
-            labelClassName="label"
-          /> */}
           {progrossbar !== null && <p>Uploading {progrossbar}%</p>}
         </div>
       </div>
