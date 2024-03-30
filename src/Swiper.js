@@ -73,7 +73,6 @@ function SwiperSlider() {
               animationDuration="0.75"
               ariaLabel="rotating-lines-loading"
               wrapperStyle={{}}
-              wrapperClass=""
             />
           }
         </p>

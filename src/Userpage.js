@@ -35,7 +35,7 @@ function Userpage() {
           const name = user.name.toUpperCase();
           const name1 = name.split("");
 
-          console.log(user.imageUrl);
+          // console.log(user.imageUrl);
 
           return (
             <div
@@ -43,7 +43,6 @@ function Userpage() {
               className=" gap-6 flex flex-col justify-center items-center text-center text-[20px] "
             >
               <div
-
               // className="border flex flex-col justify-center items-center text-center text-[20px] font-bold"
               >
                 <img
@@ -102,17 +101,16 @@ function Userpage() {
           );
         })
       ) : (
-        <p>
+        <div>
           <Bars
             height="80"
             width="80"
             color="#4fa94d"
             ariaLabel="bars-loading"
             wrapperStyle={{}}
-            wrapperClass=""
             visible={true}
           />
-        </p>
+        </div>
       )}
       <div className="">
         <button
