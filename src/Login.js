@@ -35,17 +35,24 @@ function Login() {
     if (Object.keys(validationErrors).length === 0) {
       try {
         await axios
-          .post("http://localhost:5000/user/login", data)
+          .post(
+            "https://fullstack-videostreaming-app-backend.onrender.com/user/login",
+            data
+          )
           .then((res) => {
             localStorage.setItem("auth", JSON.stringify(res.data));
             navigate("/");
             toast.success("Login successfully");
           });
-        await axios.put("http://localhost:5000/user/loginstatus", status, {
-          headers: {
-            Authorization: JSON.parse(localStorage.getItem("auth")),
-          },
-        });
+        await axios.put(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/loginstatus",
+          status,
+          {
+            headers: {
+              Authorization: JSON.parse(localStorage.getItem("auth")),
+            },
+          }
+        );
       } catch (err) {
         console.error(err);
         toast.error(err.response.data);

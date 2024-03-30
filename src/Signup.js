@@ -60,7 +60,7 @@ function Signup() {
     if (Object.keys(validationErrors).length === 0) {
       try {
         const uploadResponse = await axios.post(
-          "http://localhost:5000/user/imageupload",
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/imageupload",
           formData,
           {
             headers: {
@@ -71,13 +71,16 @@ function Signup() {
         const imageUrl = uploadResponse.data.imageUrl;
         // console.log(uploadResponse);
 
-        await axios.post("http://localhost:5000/user/register", {
-          name,
-          phone,
-          email,
-          password,
-          imageUrl,
-        });
+        await axios.post(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/register",
+          {
+            name,
+            phone,
+            email,
+            password,
+            imageUrl,
+          }
+        );
         toast.success("user signup successfully");
         setName("");
         setPhone("");

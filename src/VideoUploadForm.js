@@ -17,11 +17,14 @@ function VideoUploadForm() {
       try {
         const token = JSON.parse(localStorage.getItem("auth"));
 
-        const response = await axios.get("http://localhost:5000/user/profile", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/profile",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setUserProfile(response.data);
       } catch (error) {
         console.log(error.response.data.message || "Internal Server Error");
@@ -56,14 +59,18 @@ function VideoUploadForm() {
       toast.error("File Too Large Max size 50mb");
     } else {
       try {
-        await axios.post("http://localhost:5000/user/upload", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-          onUploadProgress: (event) => {
-            setProgrossbar(Math.floor(event.loaded / event.total) * 100);
-          },
-        });
+        await axios.post(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/upload",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            onUploadProgress: (event) => {
+              setProgrossbar(Math.floor(event.loaded / event.total) * 100);
+            },
+          }
+        );
         toast.success("Video uploaded successfully");
         navigate("/");
       } catch (error) {

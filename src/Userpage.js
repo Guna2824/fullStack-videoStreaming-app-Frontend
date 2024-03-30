@@ -14,11 +14,14 @@ function Userpage() {
       try {
         const token = JSON.parse(localStorage.getItem("auth"));
 
-        const response = await axios.get("http://localhost:5000/user/profile", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/profile",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setUserProfile(response.data);
       } catch (error) {
         console.log(error.response.data.message || "Internal Server Error");
@@ -46,7 +49,10 @@ function Userpage() {
               // className="border flex flex-col justify-center items-center text-center text-[20px] font-bold"
               >
                 <img
-                  src={`http://localhost:5000/uploads/` + user.imageUrl}
+                  src={
+                    `https://fullstack-videostreaming-app-backend.onrender.com/uploads/` +
+                    user.imageUrl
+                  }
                   alt={name1[0]}
                   className=" h-[100px] w-[100px] rounded-[50%] border border-slate-900 object-cover "
                 />

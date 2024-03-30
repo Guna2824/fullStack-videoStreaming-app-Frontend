@@ -19,9 +19,13 @@ function SwiperSlider() {
 
   useEffect(() => {
     try {
-      axios.get("http://localhost:5000/user/get").then((res) => {
-        setData(res.data);
-      });
+      axios
+        .get(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/get"
+        )
+        .then((res) => {
+          setData(res.data);
+        });
       // console.log("video get");
     } catch (err) {
       console.log(err);
@@ -53,7 +57,10 @@ function SwiperSlider() {
                     style={{ marginBottom: "50px" }}
                     controls={true}
                     muted={true}
-                    url={`http://localhost:5000/uploads/` + item.name}
+                    url={
+                      `https://fullstack-videostreaming-app-backend.onrender.com/uploads/` +
+                      item.name
+                    }
                     width="80%"
                     height="100%"
                   />

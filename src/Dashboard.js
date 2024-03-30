@@ -21,9 +21,13 @@ function Dashboard() {
 
   useEffect(() => {
     try {
-      axios.get("http://localhost:5000/user/get").then((res) => {
-        setData(res.data);
-      });
+      axios
+        .get(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/get"
+        )
+        .then((res) => {
+          setData(res.data);
+        });
       // console.log("video get");
     } catch (err) {
       console.log(err);
@@ -155,7 +159,10 @@ function Dashboard() {
                     <div className="w-[100%] h-[50%]">
                       <ReactPlayer
                         controls={true}
-                        url={`http://localhost:5000/uploads/` + item.name}
+                        url={
+                          `https://fullstack-videostreaming-app-backend.onrender.com/uploads/` +
+                          item.name
+                        }
                         width="100%"
                         height="100%"
                       />
@@ -270,7 +277,7 @@ function Dashboard() {
                           <img
                             className=" h-[100%] w-[100%] rounded-[50%]"
                             src={
-                              "http://localhost:5000/uploads/" +
+                              "https://fullstack-videostreaming-app-backend.onrender.com/uploads/" +
                               item.authorImage
                             }
                             alt="Guna"
@@ -301,7 +308,10 @@ function Dashboard() {
                       <ReactPlayer
                         className=""
                         controls={true}
-                        url={`http://localhost:5000/uploads/` + item.name}
+                        url={
+                          `https://fullstack-videostreaming-app-backend.onrender.com/uploads/` +
+                          item.name
+                        }
                         width="100%"
                         height="100%"
                       />
@@ -416,7 +426,7 @@ function Dashboard() {
                           <img
                             className=" h-[100%] w-[100%] rounded-[50%]"
                             src={
-                              "http://localhost:5000/uploads/" +
+                              "https://fullstack-videostreaming-app-backend.onrender.com/uploads/" +
                               item.authorImage
                             }
                             alt="Guna"
@@ -481,7 +491,10 @@ function Dashboard() {
                     <ReactPlayer
                       className=""
                       controls={true}
-                      url={`http://localhost:5000/uploads/` + item.name}
+                      url={
+                        `https://fullstack-videostreaming-app-backend.onrender.com/uploads/` +
+                        item.name
+                      }
                       width="100%"
                       height="100%"
                     />
@@ -596,7 +609,8 @@ function Dashboard() {
                         <img
                           className=" h-[100%] w-[100%] rounded-[50%]"
                           src={
-                            "http://localhost:5000/uploads/" + item.authorImage
+                            "https://fullstack-videostreaming-app-backend.onrender.com/uploads/" +
+                            item.authorImage
                           }
                           alt="Guna"
                         />

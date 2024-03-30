@@ -15,11 +15,14 @@ function NavBar() {
       try {
         const token = JSON.parse(localStorage.getItem("auth"));
 
-        const response = await axios.get("http://localhost:5000/user/profile", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          "https://fullstack-videostreaming-app-backend.onrender.com/user/profile",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
         setUserProfile(response.data);
       } catch (error) {
         // console.log(error.response.data.message || "Internal Server Error");
@@ -115,7 +118,8 @@ function NavBar() {
                         className="h-[75px] w-[75px] object-cover rounded-[50%]"
                         src={userProfile.map(
                           (item) =>
-                            "http://localhost:5000/uploads/" + item.imageUrl
+                            "https://fullstack-videostreaming-app-backend.onrender.com/uploads/" +
+                            item.imageUrl
                         )}
                         alt="User"
                       />
