@@ -119,15 +119,17 @@ function Userpage() {
         </div>
       )}
       <div className="">
-        <button
-          onClick={() => {
-            localStorage.removeItem("auth");
-            navigate("/");
-          }}
-          className="px-6 py-2 text-[14px] border border-2-solid bg-blue-600 hover:bg-rose-600 text-white font-bold rounded-md shadow-lg"
-        >
-          LOGOUT
-        </button>
+        {userProfile && (
+          <button
+            onClick={() => {
+              localStorage.removeItem("auth");
+              navigate("/");
+            }}
+            className="px-6 py-2 text-[14px] border border-2-solid bg-blue-600 hover:bg-rose-600 text-white font-bold rounded-md shadow-lg"
+          >
+            LOGOUT
+          </button>
+        )}
       </div>
     </div>
   );

@@ -83,11 +83,11 @@ function VideoUploadForm() {
   return (
     <div className=" ">
       <div className="h-[100vh] w-[100%] flex flex-col justify-center items-center">
-        <h2 className="text-[25px] font-bold font-mono text-gray-900 m-4">
+        <h2 className="text-[25px] md:mt-[40px] font-bold font-mono text-gray-900 m-4">
           Video Streaming Platform
         </h2>
         <form
-          className="p-6 m-2 bg-white shadow-2xl rounded-lg flex flex-col   gap-2 "
+          className="p-6 m-2 w-[95%] md:w-[40%] bg-white shadow-2xl rounded-lg flex flex-col   gap-2 "
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-1 ">

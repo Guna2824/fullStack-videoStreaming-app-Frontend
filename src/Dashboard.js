@@ -120,34 +120,39 @@ function Dashboard() {
             placeholder="search user"
           />
         </div>
+
         {/* category side list */}
-        <div className="fixed z-10 right-[2%] mt-[60px]">
-          <div className=" w-[120px] flex flex-col items-end ">
-            <button
-              onClick={() => setSelectCategory("all")}
-              className="px-4 py-2 m-1 bg-gray-600 text-white font-semibold rounded-md shadow-xl focus:bg-blue-600"
-            >
-              All
-            </button>
-            {data &&
-              category.map((item) => {
-                return (
-                  <button
-                    key={item}
-                    onClick={(e) => filterCategory(e, item)}
-                    className="px-4 py-2 m-1 bg-gray-600 text-white font-semibold rounded-md shadow-xl focus:bg-blue-600"
-                  >
-                    {item}
-                  </button>
-                );
-              })}
+        {!searchUser && (
+          <div className="fixed z-10 right-[2%] mt-[60px]">
+            <div className=" w-[120px] flex flex-col items-end ">
+              {data && (
+                <button
+                  onClick={() => setSelectCategory("all")}
+                  className="px-4 py-2 m-1 bg-gray-600 text-white font-semibold rounded-md shadow-xl focus:bg-blue-600"
+                >
+                  All
+                </button>
+              )}
+              {data &&
+                category.map((item) => {
+                  return (
+                    <button
+                      key={item}
+                      onClick={(e) => filterCategory(e, item)}
+                      className="px-4 py-2 m-1 bg-gray-600 text-white font-semibold rounded-md shadow-xl focus:bg-blue-600"
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* dashboard top slider */}
-        <div className="md:pt-[60px]">{<SwiperSlider />}</div>
+        <div className="md:pt-[60px]">{!searchUser && <SwiperSlider />}</div>
         {/* dashboard videos */}
-        <div className="mx-[10%] flex flex-wrap justify-start gap-6">
+        <div className="mx-[2%] flex flex-col items-center gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] ">
           {searchUser !== ""
             ? filterData &&
               filterData.map((item, index) => {
@@ -479,7 +484,7 @@ function Dashboard() {
         {/* dashboard top slider */}
         <div className="md:pt-[60px]">{/* <Swiper /> */}</div>
         {/* dashboard videos */}
-        <div className="mx-[10%] flex flex-wrap justify-start gap-6">
+        <div className="mx-[2%] flex flex-col items-center gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 xl:mx-[10%] ">
           {selectCategory &&
             selectCategory.map((item, index) => {
               return (
