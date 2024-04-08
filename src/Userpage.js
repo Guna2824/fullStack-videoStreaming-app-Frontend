@@ -38,12 +38,10 @@ function Userpage() {
           const name = user.name.toUpperCase();
           const name1 = name.split("");
 
-          // console.log(user.imageUrl);
-
           return (
             <div
               key={user._id}
-              className=" gap-6 flex flex-col justify-center items-center text-center text-[20px] "
+              className=" gap-6 flex flex-col justify-center items-center text-center lg:text-[20px] md:mt-4 "
             >
               <div
               // className="border flex flex-col justify-center items-center text-center text-[20px] font-bold"
@@ -54,7 +52,7 @@ function Userpage() {
                     user.imageUrl
                   }
                   alt={name1[0]}
-                  className=" h-[100px] w-[100px] rounded-[50%] border border-slate-900 object-cover "
+                  className="h-[75px] w-[75px] lg:h-[100px] lg:w-[100px] rounded-[50%] border border-slate-900 object-cover "
                 />
               </div>
               <div>

@@ -53,7 +53,7 @@ function NavBar() {
 
   return (
     <div>
-      <div className="fixed z-10 w-[100%] py-2 px-6 bg-gray-500 text-green-500 font-semibold text-xl">
+      <div className="fixed z-10 top-0 w-[100%] py-2 px-6 bg-gray-500 text-green-500 font-semibold text-xl">
         <div className=" flex flex-row justify-between items-center">
           <div className="">
             {/* top navbar logo */}
@@ -97,14 +97,7 @@ function NavBar() {
               </button>
             </div>
           </div>
-          {/* Search Bar */}
-          {/* <div>
-            <input
-              className="px-6 text-[18px] font-normal text-gray-700 w-[300px] h-[50px] md:w-[500px] rounded-3xl outline-none"
-              type="text"
-              placeholder="search user"
-            />
-          </div> */}
+
           {/* top navbar buttons */}
           <div>
             <div className="hidden md:flex gap-2">
@@ -132,7 +125,7 @@ function NavBar() {
       </div>
 
       {/* side navbar menu */}
-      <div className="relative top-[67px] md:relative md:top-[100px] bg-[url('https://images.indianexpress.com/2023/12/Social-Media.jpg')] md:flex">
+      <div className=" z-20 relative top-[55px] md:relative md:top-[100px] bg-[url('https://images.indianexpress.com/2023/12/Social-Media.jpg')] md:flex">
         {!show && (
           <div className="md:hidden w-[200px] h-[100vh] bg-gray-500 fixed z-10">
             <div className="pb-3 bg-white shadow-md  text-center mb-1">

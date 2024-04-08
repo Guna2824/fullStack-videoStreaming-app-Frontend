@@ -95,96 +95,118 @@ function Signup() {
   };
 
   return (
-    <div className="h-[100vh] w-[100%] flex items-center justify-center ">
-      <form
-        onSubmit={handleSubmit}
-        className=" h-[450px] bg-white flex flex-col gap-3 text-center justify-center items-center mt-10  py-4 w-[350px] shadow-2xl"
-      >
-        <h2 className="font-bold text-2xl ">Sing Up</h2>
-        <div className="">
-          {/* <label>username</label> */}
-          <input
-            className="border text-center p-2 outline-none"
-            type="text"
-            placeholder="Enter name"
-            value={name.trim()}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-        </div>
+    <section className="bg-white ">
+      <form className="h-[85vh] lg:mt-[7%] flex flex-col items-center mt-[50px] md:pt-[50px]">
+        <fieldset className=" pb-4 h-[85vh] overflow-y-auto w-[90%] flex flex-col items-center  gap-2 md:gap-3">
+          <legend className="text-right lg:text-center mr-5 p-1">
+            <h1 className="text-purple-800 font-bold text-[30px]">SignUp</h1>
+          </legend>
 
-        <div className="">
-          {/* <label>phonenumber</label> */}
-          <input
-            className="border text-center p-2 outline-none"
-            type="text"
-            placeholder="Enter phone number"
-            value={phone.trim()}
-            onChange={(e) => {
-              setPhone(e.target.value);
-            }}
-          />
-        </div>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                User name <span className="text-red-500">*</span>
+              </legend>
+              <input
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter user name"
+                type="text"
+                required
+                value={name.trim()}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </fieldset>
+          </div>
 
-        <div>
-          {/* <label>email-id</label> */}
-          <input
-            className="border text-center p-2 outline-none"
-            type="text"
-            placeholder="Enter email"
-            value={email.trim()}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </div>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                Phone number <span className="text-red-500">*</span>
+              </legend>
+              <input
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter phone number"
+                type="number"
+                required
+                value={phone.trim()}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </fieldset>
+          </div>
 
-        <div>
-          {/* <label>password</label> */}
-          <input
-            className="border text-center p-2 outline-none"
-            type="password"
-            placeholder="Enter pasword"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                E-mail <span className="text-red-500">*</span>
+              </legend>
+              <input
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter e-mail"
+                type="text"
+                required
+                value={email.trim()}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </fieldset>
+          </div>
 
-        <div>
-          <input
-            className="border p-1"
-            type="file"
-            accept="image/*"
-            required
-            placeholder="select photo"
-            onChange={handleImageChange}
-          />
-        </div>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                Password <span className="text-red-500">*</span>
+              </legend>
+              <input
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter Password"
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </fieldset>
+          </div>
 
-        <div>
-          <button
-            className="border w-[200px] px-4 py-2 text-white font-bold bg-gray-500 rounded-[50px] shadow-md"
-            type="submit"
-          >
-            REGISTER
-          </button>
-        </div>
-        <div>
-          <p className="text-[15px] p-2">allready register user</p>
-          <button
-            className="border w-[100px] px-2 py-1 text-white font-bold bg-gray-500 rounded-[50px] shadow-md"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            LOGIN
-          </button>
-        </div>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                Choose user image
+              </legend>
+              <input
+                className=" w-[100%] text-[14px] p-1 lg:p-3  text-gray-700 outline-none pl-2 "
+                placeholder="Choose logo"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </fieldset>
+          </div>
+
+          <div className="w-[80%] flex justify-center ">
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="py-1.5 w-[50%] lg:w-[25%] border rounded-md bg-blue-500 text-white font-bold hover:bg-blue-700 shadow-lg "
+            >
+              REGISTER
+            </button>
+          </div>
+
+          <div className="w-[80%] flex flex-col items-center justify-center gap-2 ">
+            <p className="text-purple-900">allready registered user</p>
+            <button
+              type="submit"
+              className="underline py-1.5 w-[40%] lg:w-[15%] text-purple-800 font-semibold lg:text-[20px] "
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/login");
+              }}
+            >
+              LOGIN
+            </button>
+          </div>
+        </fieldset>
       </form>
-    </div>
+    </section>
   );
 }
 

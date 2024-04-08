@@ -66,49 +66,72 @@ function Login() {
   };
 
   return (
-    <div className="h-[100vh] w-[100%] flex items-center justify-center">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-3 justify-center items-center  py-6 w-[350px] bg-white shadow-2xl"
-      >
-        <h2 className="font-bold text-2xl ">Login</h2>
-        <label>username</label>
-        <input
-          className="border text-center p-2 outline-none"
-          type="text"
-          placeholder="Enter name"
-          name="name"
-          value={data.name.toLocaleLowerCase()}
-          onChange={handleChange}
-        />
+    <section className="bg-white">
+      <form className=" h-[95vh] md:mt-4 flex flex-col justify-center items-center ">
+        <fieldset className=" pb-4  w-[90%] flex flex-col items-center justify-center  gap-3 lg:gap-5">
+          <legend className=" text-right lg:text-center mr-5 p-1 text-purple-800 font-bold text-[30px]">
+            Login
+          </legend>
 
-        <label>password</label>
-        <input
-          className="border text-center p-2 outline-none"
-          type="password"
-          placeholder="Enter pasword"
-          name="password"
-          value={data.password}
-          onChange={handleChange}
-        />
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                Username
+              </legend>
+              <input
+                className="font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter name"
+                type="text"
+                name="name"
+                required
+                value={data.name.toLocaleLowerCase()}
+                onChange={handleChange}
+              />
+            </fieldset>
+          </div>
 
-        <button
-          className="border w-[200px] px-4 py-2 text-white font-bold bg-gray-500 rounded-[50px] shadow-md "
-          type="submit"
-        >
-          LOGIN
-        </button>
-        <p className="text-[18px] ">new user</p>
-        <button
-          className="border w-[100px] px-2 py-1 text-white font-bold bg-gray-500 rounded-[50px] shadow-md"
-          onClick={() => {
-            navigate("/signup");
-          }}
-        >
-          SIGNUP
-        </button>
+          <div className="w-[80%] text-[14px] font-semibold ">
+            <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
+              <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
+                Password
+              </legend>
+              <input
+                className="font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                placeholder="Enter Password"
+                type="password"
+                name="password"
+                required
+                value={data.password}
+                onChange={handleChange}
+              />
+            </fieldset>
+          </div>
+
+          <div className="w-[80%] flex justify-center ">
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="py-1.5 w-[50%] lg:w-[25%] border rounded-md bg-blue-500 text-white font-bold hover:bg-blue-700 shadow-lg "
+            >
+              LOGIN
+            </button>
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="text-purple-900 text-[16px]">New User</p>
+            <button
+              type="click"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/signup");
+              }}
+              className="text-purple-800 font-semibold underline text-[16px] lg:text-[20px] p-2"
+            >
+              REGISTER
+            </button>
+          </div>
+        </fieldset>
       </form>
-    </div>
+    </section>
   );
 }
 
