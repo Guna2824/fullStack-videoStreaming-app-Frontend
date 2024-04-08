@@ -79,7 +79,7 @@ function Login() {
                 Username
               </legend>
               <input
-                className="font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
                 placeholder="Enter name"
                 type="text"
                 name="name"
@@ -96,7 +96,7 @@ function Login() {
                 Password
               </legend>
               <input
-                className="font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
+                className="bg-inherit font-normal h-auto lg:h-[50px] w-[100%] text-[20px] outline-none text-gray-700  pl-2 "
                 placeholder="Enter Password"
                 type="password"
                 name="password"

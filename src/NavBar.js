@@ -30,7 +30,7 @@ function NavBar() {
     };
 
     fetchUserProfile();
-  }, [Token]);
+  }, []);
 
   const output = () => {
     setShow(!show);
