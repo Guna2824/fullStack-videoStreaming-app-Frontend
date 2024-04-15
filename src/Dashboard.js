@@ -115,7 +115,7 @@ function Dashboard() {
           <input
             className="px-6 text-[16px] font-normal text-gray-100 w-[300px] h-[50px] md:w-[500px] rounded-3xl outline-none bg-gray-600"
             type="text"
-            value={searchUser}
+            value={searchUser.toLocaleLowerCase().trim()}
             onChange={(e) => setSearchUser(e.target.value)}
             placeholder="search user"
           />

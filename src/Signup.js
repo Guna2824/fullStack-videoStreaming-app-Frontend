@@ -160,7 +160,7 @@ function Signup() {
                 placeholder="Enter Password"
                 type="password"
                 required
-                value={password}
+                value={password.trim()}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </fieldset>
@@ -169,12 +169,13 @@ function Signup() {
           <div className="w-[80%] text-[14px] font-semibold ">
             <fieldset className="border shadow-lg rounded-md border-purple-700 p-1">
               <legend className=" ml-1 px-1 text-purple-900 font-semibold ">
-                Choose user image
+                Choose user image<span className="text-red-500">*</span>
               </legend>
               <input
                 className=" w-[100%] text-[14px] p-1 lg:p-3  text-gray-700 outline-none pl-2 "
-                placeholder="Choose logo"
+                placeholder="Choose image"
                 type="file"
+                required
                 accept="image/*"
                 onChange={handleImageChange}
               />

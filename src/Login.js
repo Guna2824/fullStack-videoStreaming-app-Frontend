@@ -84,7 +84,7 @@ function Login() {
                 type="text"
                 name="name"
                 required
-                value={data.name.toLocaleLowerCase()}
+                value={data.name.toLocaleLowerCase().trim()}
                 onChange={handleChange}
               />
             </fieldset>
@@ -101,7 +101,7 @@ function Login() {
                 type="password"
                 name="password"
                 required
-                value={data.password}
+                value={data.password.trim()}
                 onChange={handleChange}
               />
             </fieldset>
